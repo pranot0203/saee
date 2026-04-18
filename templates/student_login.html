@@ -1,0 +1,65 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold text-primary"><i class="fas fa-university me-2"></i>STUDENT LOGIN</h2>
+            <p class="text-muted">Verify your details to cast your vote</p>
+        </div>
+
+        <div class="card shadow-lg animate__animated animate__fadeInUp border-0" style="border-radius: 15px;">
+            <div class="card-body p-5">
+                <form action="{{ url_for('student_login') }}" method="POST">
+                    <div class="row g-3">
+                        <div class="col-md-12 mb-2">
+                            <label for="prn" class="form-label fw-bold">13-Digit PRN</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-0"><i class="fas fa-id-card text-primary"></i></span>
+                                <input type="text" class="form-control" id="prn" name="prn" placeholder="Enter your PRN" required>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-12 mb-2">
+                            <label for="name" class="form-label fw-bold">Full Name (as per records)</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-0"><i class="fas fa-user text-primary"></i></span>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-2">
+                            <label for="mobile" class="form-label fw-bold">Mobile Number</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-0"><i class="fas fa-phone text-primary"></i></span>
+                                <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Registered mobile" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-2">
+                            <label for="mother_name" class="form-label fw-bold">Mother's Name</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-0"><i class="fas fa-female text-primary"></i></span>
+                                <input type="text" class="form-control" id="mother_name" name="mother_name" placeholder="Mother's name" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg rounded-pill shadow-sm">
+                            Verify & Proceed to Vote <i class="fas fa-check-circle ms-2"></i>
+                        </button>
+                        <a href="{{ url_for('index') }}" class="btn btn-link text-muted mt-2">
+                            <i class="fas fa-arrow-left me-2"></i> Back to Home
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="mt-4 text-center text-muted animate__animated animate__fadeIn animate__delay-1s">
+            <small><i class="fas fa-shield-alt me-1"></i> Your information is securely matched against the student database.</small>
+        </div>
+    </div>
+</div>
+{% endblock %}
